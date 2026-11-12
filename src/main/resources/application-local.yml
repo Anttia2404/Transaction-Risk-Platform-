@@ -1,0 +1,7 @@
+app:
+  auth:
+    seed:
+      enabled: ${LOCAL_USER_SEED_ENABLED:false}
+      username: ${LOCAL_USER_SEED_USERNAME:}
+      password: ${LOCAL_USER_SEED_PASSWORD:}
+      role: ${LOCAL_USER_SEED_ROLE:ADMIN}

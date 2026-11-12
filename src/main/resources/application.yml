@@ -1,12 +1,21 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   application:
     name: transaction-risk-platform
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5433/transaction_risk}
     username: ${DB_USERNAME:transaction_risk}
-    password: ${DB_PASSWORD:local_dev_only_change_me}
+    password: ${DB_PASSWORD:}
   flyway:
     enabled: true
+
+app:
+  auth:
+    jwt:
+      secret: ${JWT_SECRET:}
+      issuer: ${JWT_ISSUER:transaction-risk-platform}
+      expiry-seconds: ${JWT_EXPIRY_SECONDS:900}
 
 management:
   endpoints:
